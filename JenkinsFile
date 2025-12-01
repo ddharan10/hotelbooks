@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ddharan10/hotelbook.git'
+                git branch: 'main', url: 'https://github.com/ddharan10/hotelbooks.git'
             }
         }
 
