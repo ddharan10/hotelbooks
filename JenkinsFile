@@ -1,11 +1,11 @@
-
 pipeline {
     agent any
+    
     stages {
+
         stage('Checkout') {
             steps {
-
-                git branch: 'main',url: 'https://github.com/ddharan10/hotelbook.git'
+                git branch: 'main', url: 'https://github.com/ddharan10/hotelbook.git'
             }
         }
 
@@ -13,6 +13,20 @@ pipeline {
             steps {
                 bat "mvn clean test"
             }
+        }
+
+        stage('Publish Cucumber Report') {
+            steps {
+                cucumber buildStatus: 'UNSTABLE',
+                         fileIncludePattern: '**/cucumber*.json',
+                         jsonReportDirectory: 'target'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/**', allowEmptyArchive: true
         }
     }
 }
