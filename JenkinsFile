@@ -15,12 +15,4 @@ pipeline {
             }
         }
     }
-
-   post {
-        always {
-            junit 'target/cucumber-reports/*.xml'
-            cucumber fileIncludePattern: 'target/cucumber-reports/*.json'
-        }
-    }
-
 }
