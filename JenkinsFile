@@ -14,13 +14,5 @@ pipeline {
                 bat "mvn clean test"
             }
         }
-
-        stage('Publish Cucumber Report') {
-            steps {
-                cucumber buildStatus: 'UNSTABLE',
-                         fileIncludePattern: '**/cucumber*.json',
-                         jsonReportDirectory: 'target'
-            }
-        }
     }
 }
