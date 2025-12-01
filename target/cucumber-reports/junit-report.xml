@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="19.651" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Validating the Flight booking" name="Search round-trip flights from Chennai to Delhi" time="19.512">
+<system-out><![CDATA[
+When Enter the from location................................................passed
+And Enter the to location...................................................passed
+Then validate the name......................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
