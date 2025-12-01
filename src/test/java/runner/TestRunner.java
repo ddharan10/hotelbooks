@@ -9,7 +9,6 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(features = "src/test/java/feature", 
 glue = "stepdef", 
 dryRun = !true, 
-tags = "@Map",
 snippets = SnippetType.CAMELCASE,
 plugin = {
 	    "pretty",
