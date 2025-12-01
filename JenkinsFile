@@ -1,11 +1,6 @@
 
 pipeline {
     agent any
-
-    parameters {
-        string(name: 'CUCUMBER_TAGS', defaultValue: '@Map', description: 'Tags to run')
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +11,7 @@ pipeline {
 
         stage('Run Cucumber Tests') {
             steps {
-                bat "mvn clean test -Dcucumber.filter.tags=${params.CUCUMBER_TAGS}"
+                bat "mvn clean test"
             }
         }
     }
